@@ -2,8 +2,7 @@
   <div id="app">
     <zf-button :type="false" icon="zf-icon-qq" diffuse loading>点击联系QQ</zf-button>
     <zf-link icon="zf-icon-wx" href="#" @click="btnClick">你好我的连接</zf-link>
-    <zf-input
-      placeholder="你好请输入"
+    <zf-input placeholder="你好请输入"
       icon="zf-icon-wx"
       type="text"
       maxlength="10"
