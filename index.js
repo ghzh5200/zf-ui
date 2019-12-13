@@ -1,0 +1,34 @@
+import ZfButton from './src/components/ZfButton'
+import ZfInput from './src/components/ZfInput'
+import ZfLink from './src/components/ZfLink'
+import ZfContainer from './src/components/ZfContainer'
+import ZfFollowContainer from './src/components/ZfFollowContainer'
+
+const components = [
+  ZfButton,
+  ZfLink,
+  ZfInput,
+  ZfContainer,
+  ZfFollowContainer
+]
+
+// 定义 install 方法
+const install = function (Vue) {
+  if (install.installed) return
+  install.installed = true
+  // 遍历并注册全局组件
+  components.map(component => {
+    Vue.component(component.name, component)
+  })
+}
+
+if (typeof window !== 'undefined' && window.Vue) {
+  install(window.Vue)
+}
+
+export default {
+  // 导出的对象必须具备一个 install 方法
+  install,
+  // 组件列表
+  ...components
+}
